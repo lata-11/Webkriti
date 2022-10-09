@@ -216,7 +216,7 @@ span{
 }
 .content
 {
-  margin: 50px;
+  margin: 50px 10%;
 }
 .days
 {
@@ -607,7 +607,7 @@ span{
 {
   margin-bottom: 20px;
 }
-/* .reveal{
+.reveal{
   position: relative;
   transform: translateY(150px);
   opacity: 0;
@@ -617,6 +617,7 @@ span{
 .reveal.active{
   transform: translateY(0px);
   opacity: 1;
-} */
+} 
+
 
 
