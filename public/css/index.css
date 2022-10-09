@@ -216,7 +216,7 @@ span{
 }
 .content
 {
-  margin: 50px;
+  margin: 50px 10%;
 }
 .days
 {
@@ -618,5 +618,6 @@ span{
   transform: translateY(0px);
   opacity: 1;
 } 
+
 
 
