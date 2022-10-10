@@ -2,9 +2,24 @@ const express=require("express");
 const app=express();
 const bcrypt=require("bcrypt");
 const {pool}=require("./DBconfig");
+const session=require("express-session");
+const flash=require("express-flash");
+const passport=require("passport");
+const initializePassport=require("./passportConfig");
+initializePassport(passport);
+
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:false}));
+app.use(session({
+    secret:'secret',
+    resave:false,
+    saveUninitialized: false
+
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 app.use(express.static(`${__dirname}/public`))
 
@@ -70,12 +85,33 @@ app.post('/signup', async (req, res)=>
                     errors.push({message:"Email already registered"});
                     res.render("signup", {errors});
                 }
+                else
+                {
+                    pool.query(
+                        `insert into users(name, email, password)
+                        values ($1, $2, $3)
+                        returning id, password`, [name, email, hashPassword], (err, results)=>{
+                            if(err)
+                            {
+                                throw(err)
+                            }
+                            console.log(results.row);
+                            req.flash('success_msg', "You are now registered. Please Log In");
+                            res.redirect('login');
+                        }
+                    )
+                }
             }
   
         )
     }
 });
 
+app.post("/login", (passport.authenticate('local', {
+    successRedirect:"/", 
+    failureRedirect:"/login",
+    failureFlash:true
+})));
 
 app.listen('3000', (req, res)=>
 {
