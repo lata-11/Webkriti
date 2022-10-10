@@ -1,4 +1,7 @@
-
+*{
+  margin:0;
+  padding:0;
+}
 img{
 	width: 100%;
 }
@@ -84,7 +87,7 @@ img{
 
 
 .right {
-	background:url("images/Robots-of-the-future-photo-illust.-by-Pixabay.png");
+	background:url(../images/Robots-of-the-future-photo-illust.-by-Pixabay.png);
 	color: #FF7777;
 	position: relative;
 }
