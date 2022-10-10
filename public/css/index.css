@@ -84,8 +84,8 @@ body
 .navigation-buttons .fa
 {
   border: 2px solid white;
-  border-radius: 3px;
-  padding: 10px;
+  border-radius: 2px;
+  padding: 5px;
   color: white;
 }
 .navigation-menu ul li
@@ -240,10 +240,10 @@ span{
 }
 .days-heading
 {
-  margin-top: 40px;
+ 
   display: grid;
   justify-content: center;
-  margin-top: 250px;
+  margin-top: 360px;
 }
 .popup
 {
@@ -596,11 +596,11 @@ span{
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(75, 70, 224), 0 0 40px #rgb(75, 70, 224), 0 0 50px #rgb(75, 70, 224), 0 0 60px #rgb(75, 70, 224), 0 0 70px #rgb(75, 70, 224);
   }
   
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 10px #fff, 0 0 20px #00E6F6, 0 0 30px #00E6F6, 0 0 40px #00E6F6, 0 0 50px #00E6F6, 0 0 60px #00E6F6, 0 0 80px #00E6F6;
   }
 }
 .robot-img
